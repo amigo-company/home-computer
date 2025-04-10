@@ -11,19 +11,19 @@ def lookup(directory: str, key: str, recursive_search: bool = True, use_regex: b
     """
         Searches for matches to a given key in the specified directory.
 
-        Keys:
-            +: Any single character
-            *: Any number of characters
-            #: Any single numberic character
-            &: Any alphabetic character
+        ## Keys:
+            `+`: Any single character
+            `*`: Any number of characters
+            `#`: Any single numberic character
+            `&`: Any alphabetic character
 
-        Parameters:
+        ## Parameters:
             directory (str): Path to the directory to search in.
             key (str): The term or pattern to search for.
             recursive_search (bool): Whether to search in subdirectories. Default: True.
             use_regex (bool): Whether the key should be treated as a regular expression. Default: False.
 
-        Returns:
+        ## Returns:
             list[str]: A list of paths or matches found in the directory.
     """
     pattern = re.compile(key) if use_regex else re.compile((
